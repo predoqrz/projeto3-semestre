@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eletrônicos - ClubVendas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- header & nav (mesmos do index) -->
+  <header class="header">
+    <div class="logo-area">
+      <img src="img/logo.jpg" alt="Logo ClubVendas" class="logo" />
+      <h1 class="brand">ClubVendas</h1>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Pesquisar produtos..." oninput="buscarProduto()" />
+      <button onclick="buscarProduto()">🔍</button>
+    </div>
+
+    <div class="user-actions">
+      <a href="login.html" class="login-link">Olá, faça seu login</a>
+      <div class="cart" onclick="abrirCarrinho()">🛒 <span id="cart-count">0</span></div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="eletronicos.html" class="active">Eletrônicos</a></li>
+      <li><a href="brinquedos.html">Brinquedos</a></li>
+      <li><a href="moda.html">Moda</a></li>
+      <li><a href="esporte.html">Esporte</a></li>
+      <li><a href="utilidades.html">Utilidades</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h2 class="section-title">Eletrônicos</h2>
+    <div class="products" id="product-list"></div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 ClubVendas</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Ao carregar esta página, renderize apenas produtos da categoria "eletronicos"
+    window.addEventListener('load', () => {
+      exibirProdutosPorCategoria('eletronicos', 'product-list', 0); // 0 = mostrar todos
+      showSlides();
+    });
+  </script>
+  
+</body>
+</html>

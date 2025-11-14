@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClubVendas - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <img src="img/logo.jpg" alt="Logo ClubVendas" class="logo" />
+      <h1 class="brand">ClubVendas</h1>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Pesquisar produtos, marcas e muito mais..." oninput="buscarProduto()" />
+      <button onclick="buscarProduto()">🔍</button>
+    </div>
+
+    <div class="user-actions">
+      <a href="login.html" class="login-link">Olá, faça seu login</a>
+      <div class="cart" onclick="abrirCarrinho()">🛒 <span id="cart-count">0</span></div>
+      
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="eletronicos.html">Eletrônicos</a></li>
+      <li><a href="brinquedos.html">Brinquedos</a></li>
+      <li><a href="moda.html">Moda</a></li>
+      <li><a href="esporte.html">Esporte</a></li>
+      <li><a href="utilidades.html">Utilidades</a></li>
+    </ul>
+  </nav>
+ 
+  
+    <!-- Carrossel -->
+<section class="carrossel-banner">
+  <div class="carrossel-container" id="carrosselAmazon">
+    <div class="banner-item">
+      <img src="img/megapromocao.png" alt="Promoção Mochilas" />
+    </div>
+    <div class="banner-item">
+      <img src="img/blackfriday.png" alt="Promocao eletronicos" />
+    </div>
+    <div class="banner-item">
+      <img src="img/pc.png" alt="PC Gamer" />
+    </div>
+    <div class="banner-item">
+      <img src="img/promocao.png" alt="Promocao Tenis" />
+    </div>
+    <!-- Banner clicável do jogo -->
+    <div class="banner-item">
+      <a href="jogo.html">
+        <img src="img/img-jogo.png" alt="Clique para jogar" class="banner-jogo" />
+      </a>
+    </div>
+    
+  </div>
+
+  <!-- Botões de navegação -->
+  <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+  <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+</section>
+
+
+  <!-- MAIN: seções por categoria -->
+ <section class="home-section">
+  <h2 class="section-title">🔥 Ofertas do Dia</h2>
+  <div id="ofertas-dia" class="products"></div>
+</section>
+
+    <section class="home-section">
+      <h2 class="section-title">Lançamentos em Eletrônicos</h2>
+      <div class="products" id="eletronicos-list"></div>
+      <a class="ver-tudo" href="eletronicos.html">Ver todas →</a>
+    </section>
+
+    <section class="home-section">
+      <h2 class="section-title">Brinquedos em destaque</h2>
+      <div class="products" id="brinquedos-list"></div>
+      <a class="ver-tudo" href="brinquedos.html">Ver todas →</a>
+    </section>
+ 
+    
+<!-- PRODUTO FONE BLUETOOTH-->
+ <select class="produto">
+      <a href="fone.html"></a>
+      <h3>Fone Bluetooth Sem Fio</h3>
+      <p class="preco">R$ 149,90</p>
+      <button class="btn-comprar">Adicionar ao Carrinho</button>
+ </select>
+
+
+  </main>
+
+  <!-- CARRINHO SIMPLES (modal) -->
+  <div id="cartModal" class="cart-modal" aria-hidden="true">
+  <div class="cart-content">
+    <h3>Seu Carrinho <span id="cart-count">(0)</span></h3>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <div class="cart-actions">
+      <button onclick="fecharCarrinho()">Continuar comprando</button>
+      <button onclick="finalizarCompra()">Finalizar compra</button>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 Club Vendas</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Ao carregar a home, exibimos produtos gerais e pré-carregamos seções por categoria:
+    window.addEventListener('load', () => {
+      exibirProdutos(); // mostra todos (ou as ofertas do dia)
+      exibirProdutosPorCategoria('eletronicos', 'eletronicos-list', 6);
+      exibirProdutosPorCategoria('brinquedo', 'brinquedos-list', 6);
+      showSlides();
+    });
+  </script>
+
+
+<script src="pagamento.js"></script>
+
+</body>
+</html>

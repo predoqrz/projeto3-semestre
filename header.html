@@ -1,0 +1,34 @@
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img src="img/logo.jpg" alt="Logo ClubVendas" class="logo" />
+    <h1 class="brand">ClubVendas</h1>
+  </div>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      id="search"
+      placeholder="Pesquisar produtos, marcas e muito mais..."
+      oninput="buscarProduto()"
+    />
+    <button onclick="buscarProduto()">🔍</button>
+  </div>
+
+  <div class="user-actions">
+    <a href="login.html" class="login-link">Olá, faça seu login</a>
+    <div class="cart" onclick="abrirCarrinho()">🛒 <span id="cart-count">0</span></div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="eletronicos.html">Eletrônicos</a></li>
+    <li><a href="brinquedos.html">Brinquedos</a></li>
+    <li><a href="moda.html">Moda</a></li>
+    <li><a href="esporte.html">Esporte</a></li>
+    <li><a href="utilidades.html">Utilidades</a></li>
+  </ul>
+</nav>

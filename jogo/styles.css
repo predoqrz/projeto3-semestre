@@ -1,0 +1,99 @@
+/* Estilo geral da página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8d5d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Container do jogo */
+.game-container {
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ff6f8e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Tabuleiro do jogo - 4 colunas */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 120px); /* 4 colunas, o que dá largura para cada carta */
+  grid-template-rows: repeat(3, 120px); /* 3 linhas, cada uma com altura de 120px */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Cartas */
+.card {
+  background-color: #fce1ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* Inicialmente, as cartas ficam ocultas */
+}
+
+.card.flipped {
+  background-color: #f5a7c0;
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  background-color: #ff4e79;
+  cursor: not-allowed;
+}
+
+/* 4 Cartas de altura - maior altura */
+.card.height {
+  height: 180px; /* Cartas mais altas */
+  width: 120px;  /* Mesmo tamanho de largura */
+}
+
+/* A imagem fica oculta até a carta ser virada */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+  border-radius: 10px;
+
+}
+
+/* Exibe a imagem quando a carta for virada */
+.card.flipped img,
+.card.matched img {
+  visibility: visible;
+}
+
+
+/* Botão de reiniciar */
+#restartButton {
+  background-color: #ff4e79;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#restartButton:hover {
+  background-color: #ff3456;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta - ClubVendas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="img/logo.jpg" alt="Logo ClubVendas" class="logo" />
+      </a>
+      <h1 class="brand">ClubVendas</h1>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar produtos..." />
+      <button>🔍</button>
+    </div>
+
+    <div class="user-actions">
+      <a href="login.html" class="login-link">Olá, faça seu login</a>
+      <div class="cart">🛒</div>
+    </div>
+  </header>
+
+  <!-- FORMULÁRIO DE CADASTRO -->
+  <main class="login-container">
+    <div class="login-card">
+      <h2>Criar sua conta</h2>
+      <form action="cadastro.php" method="POST" id="cadastro-form">
+        <label for="nome">Nome completo</label>
+        <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Crie uma senha" required>
+
+        <label for="confirmar">Confirmar senha</label>
+        <input type="password" id="confirmar" placeholder="Confirme sua senha" required>
+
+        <button type="submit">Cadastrar</button>
+
+        <p class="signup-text">
+          Já tem uma conta? <a href="login.html">Entrar</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2025 ClubVendas — Todos os direitos reservados.
+  </footer>
+
+  <!-- SCRIPT DE VALIDAÇÃO -->
+  <script>
+    document.getElementById('cadastro-form').addEventListener('submit', function(event) {
+      const senha = document.getElementById('senha').value;
+      const confirmar = document.getElementById('confirmar').value;
+
+      if (senha !== confirmar) {
+        event.preventDefault();
+        alert('As senhas não coincidem! Por favor, tente novamente.');
+      } else {
+        alert('Cadastro realizado com sucesso!');
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

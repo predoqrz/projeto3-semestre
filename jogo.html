@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClubVendas - Jogo da Memória</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Ajuste visual do iframe dentro do layout */
+    .jogo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px auto;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER e NAV iguais -->
+  <header class="header">
+    <div class="logo-area">
+      <img src="img/logo.jpg" alt="Logo ClubVendas" class="logo" />
+      <h1 class="brand">ClubVendas</h1>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Pesquisar produtos, marcas e muito mais..." oninput="buscarProduto()" />
+      <button onclick="buscarProduto()">🔍</button>
+    </div>
+
+    <div class="user-actions">
+      <a href="login.html" class="login-link">Olá, faça seu login</a>
+      <div class="cart" onclick="abrirCarrinho()">🛒 <span id="cart-count">0</span></div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="eletronicos.html">Eletrônicos</a></li>
+      <li><a href="brinquedos.html">Brinquedos</a></li>
+      <li><a href="moda.html">Moda</a></li>
+      <li><a href="esporte.html">Esporte</a></li>
+      <li><a href="utilidades.html">Utilidades</a></li>
+    </ul>
+  </nav>
+
+  <!-- ÁREA DO JOGO -->
+  <main class="jogo-container">
+    <h2>🎮 Jogo da Memória</h2>
+    <iframe src="jogo/index.html"></iframe>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Club Vendas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
